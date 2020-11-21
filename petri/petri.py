@@ -23,7 +23,6 @@ def main():
             node.pop_token()
         for output_node, new_token in creations:
             output_node.add_token(new_token)
-    pass
 
 
 if __name__ == "__main__":

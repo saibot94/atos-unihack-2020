@@ -22,6 +22,7 @@ class LoggableEntry:
 
 class Token(LoggableEntry):
     def __init__(self, id):
+        self._log = []
         super(LoggableEntry, self).__init__()
         self.id = id
 
@@ -31,6 +32,7 @@ class Token(LoggableEntry):
 
 class Place(LoggableEntry):
     def __init__(self, id, capacity: int, tokens: List[Token]):
+        self._log = []
         super(LoggableEntry, self).__init__()
         self.capacity = capacity
         self.id = id
@@ -62,6 +64,7 @@ class Place(LoggableEntry):
 class Transition(LoggableEntry):
     def __init__(self, id, inputs: List[Place], outputs: List[Place]):
         super(LoggableEntry, self).__init__()
+        self._log = []
         self.inputs = inputs
         self.id = id
         self.outputs = outputs
