@@ -75,11 +75,14 @@ class Transition(LoggableEntry):
             o.has_space() for o in self.outputs
         ):
             for inp in self.inputs:
-                inp.pop_token()
+                # inp.pop_token()
+                deletions.append(inp)
             for outp in self.outputs:
                 new_token = Token(random.randint(0, 100000))
                 new_token.log(f"Created and added to {outp}")
                 self.log(f"Added {new_token} to {outp}")
-                outp.add_token(new_token)
+                # outp.add_token(new_token)
+                creations.append((outp, new_token))
+                
             self.log(f"Ran transition {str(self)}")
 

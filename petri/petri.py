@@ -19,9 +19,10 @@ def main():
         creations = []
         for t in TRANSITIONS:
             t.tick(i, deletions, creations)
-
-        # for node, token in deletions:
-        #     node.remove_token(token)
+        for node in deletions:
+            node.pop_token()
+        for output_node, new_token in creations:
+            output_node.add_token(new_token)
     pass
 
 
