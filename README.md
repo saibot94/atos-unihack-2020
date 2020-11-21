@@ -16,6 +16,7 @@ More informations about Petri nets can be found here: https://en.wikipedia.org/w
 
 Task:
 Create a functional program that simulates a petri network that is not accounting transport capacity, only node capacity.
+Addition: Each entity (Place, Transition, Token) shall contain a record of interaction, in such way that at any given time, on a selected entity it can be visible the entity log.
 
 
 ---- Instructions -----
