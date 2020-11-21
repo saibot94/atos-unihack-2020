@@ -26,3 +26,12 @@ Addition: Each entity (Place, Transition, Token) shall contain a record of inter
 
 ---- Considerations -----
 Only pushes to the announced hour will be considered
+
+### Running 
+
+Everything is contained in a python script, just give it a `python ./petri/petri.py`. 
+
+Modify stuff in `input_data.py` and make sure you have `TRANSITIONS` defined. At every tick all transitions happen (if possible) and then the changes are propagated all at once.
+
+If you added a recursive (infinite) net then you can just pass `--iterations`.
+

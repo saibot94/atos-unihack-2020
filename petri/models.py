@@ -13,9 +13,6 @@ VERBOSE = 1
 class LoggableEntry:
     _log = []
 
-    # def __init__(self):
-    #     _log = []
-
     def log(self, message):
         formatted = f"[{datetime.utcnow()}] {self.__str__()}: {message}"
         self._log.append(formatted)
@@ -73,7 +70,7 @@ class Transition(LoggableEntry):
     def __str__(self):
         return f"Transition {self.id}"
 
-    def tick(self, i):
+    def tick(self, i, deletions, creations):
         if all(inp.has_token() for inp in self.inputs) and all(
             o.has_space() for o in self.outputs
         ):
@@ -86,30 +83,3 @@ class Transition(LoggableEntry):
                 outp.add_token(new_token)
             self.log(f"Ran transition {str(self)}")
 
-
-t1_inputs = [Place(1, 10, [Token(1)]), Place(2, 10, [Token(2)])]
-
-p3 = Place(3, 10, [])
-p4 = Place(4, 10, [Token(1234)])
-
-t1_outputs = [p3]
-
-t2_inputs, t2_outputs = [p3], [p4]
-
-
-TRANSITIONS = [
-    Transition("t1", t1_inputs, t1_outputs),
-    Transition("t2", t2_inputs, t2_outputs),
-]
-
-
-def main():
-    args = parser.parse_args()
-    for i in range(args.iterations):
-        for t in TRANSITIONS:
-            t.tick(i)
-    pass
-
-
-if __name__ == "__main__":
-    main()
