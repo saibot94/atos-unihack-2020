@@ -10,12 +10,12 @@ You have one hour to commit in your branch.
 The winning solution will be pushed to main branch.
 
 ---- Problem ---- 
-A Petri net, also known as a place/transition (PT) net, is one of several mathematical modeling languages for the description of distributed systems. It is a class of discrete event dynamic system. A Petri net is a directed bipartite graph that has two types of elements, places and transitions, depicted as white circles and rectangles, respectively. A place can contain any number of tokens, depicted as black circles. A transition is enabled if all places connected to it as inputs contain at least one token. 
+A Petri net, also known as a place/transition (PT) net, is one of several mathematical modeling languages for the description of distributed systems. It is a class of discrete event dynamic system. A Petri net is a directed bipartite graph that has two types of elements, places and transitions, designed to passthrough informational containers called tokens. A place can contain any number of tokens. A transition is enabled if all places connected to it as inputs contain at least one token. 
 
 More informations about Petri nets can be found here: https://en.wikipedia.org/wiki/Petri_net#:~:text=A%20Petri%20net%20is%20a,contain%20at%20least%20one%20token..
 
 Task:
-Create a functional program that simulates a petri network that is not accounting transport capacity, only node capacity.
+Create a functional program that simulates a Petri net that is not accounting transport capacity, only node (Place) capacity.
 Addition: Each entity (Place, Transition, Token) shall contain a record of interaction, in such way that at any given time, on a selected entity it can be visible the entity log.
 
 
